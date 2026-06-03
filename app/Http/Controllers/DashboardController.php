@@ -40,7 +40,7 @@ class DashboardController extends Controller
             ->where('user_id', $userId)
             ->latest('transaction_date')
             ->latest()
-            ->take(5)
+            ->take(20)
             ->get();
 
         $expenseByCategory = Transaction::select('category_id', DB::raw('SUM(amount) as total'))

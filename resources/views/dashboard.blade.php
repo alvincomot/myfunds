@@ -60,7 +60,7 @@
                         Recent Transactions
                     </h3>
 
-                    <div class="space-y-4">
+                    <div class="space-y-4 max-h-80 overflow-y-auto pr-2">
                         @forelse ($recentTransactions as $transaction)
                             <div class="flex justify-between border-b pb-3">
                                 <div>
