@@ -2,12 +2,12 @@
     <x-slot name="header">
         <div class="flex justify-between items-center">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Pemasukan
+                Incomes
             </h2>
 
             <a href="{{ route('incomes.create') }}"
               class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                Tambah Pemasukan
+                Add Income
             </a>
         </div>
     </x-slot>
@@ -26,11 +26,11 @@
                     <table class="w-full border-collapse">
                         <thead>
                             <tr class="border-b">
-                                <th class="py-3 text-left">Tanggal</th>
-                                <th class="py-3 text-left">Kategori</th>
-                                <th class="py-3 text-left">Keterangan</th>
-                                <th class="py-3 text-right">Jumlah</th>
-                                <th class="py-3 text-right">Aksi</th>
+                                <th class="py-3 text-left">Date</th>
+                                <th class="py-3 text-left">Category</th>
+                                <th class="py-3 text-left">Description</th>
+                                <th class="py-3 text-right">Amount</th>
+                                <th class="py-3 text-right">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -51,12 +51,12 @@
                                     <td class="py-3 text-right">
                                         <form action="{{ route('incomes.destroy', $income->id) }}"
                                               method="POST"
-                                              onsubmit="return confirm('Yakin ingin menghapus pemasukan ini?')">
+                                              onsubmit="return confirm('Are you sure you want to delete this income?')">
                                             @csrf
                                             @method('DELETE')
 
                                             <button type="submit" class="text-red-600 hover:underline">
-                                                Hapus
+                                                Delete
                                             </button>
                                         </form>
                                     </td>
@@ -64,7 +64,7 @@
                             @empty
                                 <tr>
                                     <td colspan="5" class="py-4 text-center text-gray-500">
-                                        Belum ada data pemasukan.
+                                        No income data available.
                                     </td>
                                 </tr>
                             @endforelse

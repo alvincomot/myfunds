@@ -2,12 +2,12 @@
     <x-slot name="header">
         <div class="flex justify-between items-center">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Pengeluaran
+                Expenses
             </h2>
 
             <a href="{{ route('expenses.create') }}"
-               class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">
-                Tambah Pengeluaran
+              class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">
+                Add Expense
             </a>
         </div>
     </x-slot>
@@ -26,11 +26,11 @@
                     <table class="w-full border-collapse">
                         <thead>
                             <tr class="border-b">
-                                <th class="py-3 text-left">Tanggal</th>
-                                <th class="py-3 text-left">Kategori</th>
-                                <th class="py-3 text-left">Keterangan</th>
-                                <th class="py-3 text-right">Jumlah</th>
-                                <th class="py-3 text-right">Aksi</th>
+                                <th class="py-3 text-left">Date</th>
+                                <th class="py-3 text-left">Category</th>
+                                <th class="py-3 text-left">Description</th>
+                                <th class="py-3 text-right">Amount</th>
+                                <th class="py-3 text-right">Actions</th>
                             </tr>
                         </thead>
 
@@ -63,7 +63,7 @@
 
                                             <button type="submit"
                                                     class="text-red-600 hover:underline">
-                                                Hapus
+                                                Delete
                                             </button>
                                         </form>
                                     </td>
@@ -71,7 +71,7 @@
                             @empty
                                 <tr>
                                     <td colspan="5" class="py-4 text-center text-gray-500">
-                                        Belum ada data pengeluaran.
+                                        No expense data available.
                                     </td>
                                 </tr>
                             @endforelse
