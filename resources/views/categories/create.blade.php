@@ -1,0 +1,70 @@
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            Tambah Kategori Transaksi
+        </h2>
+    </x-slot>
+
+    <div class="py-8">
+        <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6">
+
+                    <form action="{{ route('categories.store') }}" method="POST">
+                        @csrf
+
+                        <div class="mb-4">
+                            <label for="name" class="block mb-2 font-medium text-gray-700">
+                                Nama Kategori
+                            </label>
+                            <input type="text"
+                                   name="name"
+                                   id="name"
+                                   value="{{ old('name') }}"
+                                   class="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                                   placeholder="Contoh: Gaji, Makanan, Transport">
+
+                            @error('name')
+                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="type" class="block mb-2 font-medium text-gray-700">
+                                Tipe Kategori
+                            </label>
+                            <select name="type"
+                                    id="type"
+                                    class="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                <option value="">Pilih tipe kategori</option>
+                                <option value="income" {{ old('type') === 'income' ? 'selected' : '' }}>
+                                    Pemasukan
+                                </option>
+                                <option value="expense" {{ old('type') === 'expense' ? 'selected' : '' }}>
+                                    Pengeluaran
+                                </option>
+                            </select>
+
+                            @error('type')
+                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div class="flex justify-end gap-3">
+                            <a href="{{ route('categories.index') }}"
+                               class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300">
+                                Batal
+                            </a>
+
+                            <button type="submit"
+                                    class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                Simpan
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</x-app-layout>
