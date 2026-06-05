@@ -6,7 +6,12 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                    <span {{ $attributes->merge([
+                      'class' => 'inline-flex items-center font-black tracking-tight text-4xl'
+                      ]) }}>
+                      <span class="text-slate-900">my</span>
+                      <span class="text-emerald-600">funds</span>
+                  </span>
                     </a>
                 </div>
 
