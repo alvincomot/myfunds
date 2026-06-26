@@ -36,6 +36,27 @@ class DashboardController extends Controller
 
         $monthlyBalance = $monthlyIncome - $monthlyExpense;
 
+        // --- Calculate Previous Month Stats for Percentage ---
+        $lastMonthIncome = Transaction::where('user_id', $userId)
+            ->where('type', 'income')
+            ->whereMonth('transaction_date', now()->subMonth()->month)
+            ->whereYear('transaction_date', now()->subMonth()->year)
+            ->sum('amount');
+
+        $lastMonthExpense = Transaction::where('user_id', $userId)
+            ->where('type', 'expense')
+            ->whereMonth('transaction_date', now()->subMonth()->month)
+            ->whereYear('transaction_date', now()->subMonth()->year)
+            ->sum('amount');
+            
+        $lastMonthBalance = $lastMonthIncome - $lastMonthExpense;
+
+        // Calculate Percentages
+        $incomePercentage = $lastMonthIncome > 0 ? round((($monthlyIncome - $lastMonthIncome) / $lastMonthIncome) * 100, 1) : ($monthlyIncome > 0 ? 100 : 0);
+        $expensePercentage = $lastMonthExpense > 0 ? round((($monthlyExpense - $lastMonthExpense) / $lastMonthExpense) * 100, 1) : ($monthlyExpense > 0 ? 100 : 0);
+        $balancePercentage = $lastMonthBalance > 0 ? round((($monthlyBalance - $lastMonthBalance) / $lastMonthBalance) * 100, 1) : ($monthlyBalance > 0 ? 100 : 0);
+        // -----------------------------------------------------
+
         $recentTransactions = Transaction::with('category')
             ->where('user_id', $userId)
             ->latest('transaction_date')
@@ -61,6 +82,9 @@ class DashboardController extends Controller
             'monthlyIncome' => (float) $monthlyIncome,
             'monthlyExpense' => (float) $monthlyExpense,
             'monthlyBalance' => (float) $monthlyBalance,
+            'incomePercentage' => $incomePercentage,
+            'expensePercentage' => $expensePercentage,
+            'balancePercentage' => $balancePercentage,
             'recentTransactions' => $recentTransactions,
             'expenseByCategory' => $expenseByCategory
         ]);
