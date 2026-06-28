@@ -58,7 +58,7 @@ const AdminDashboard = () => {
           <div className="flex justify-between items-start mb-4">
             <h3 className="text-slate-500 font-medium">Total Pemasukan Global</h3>
             <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600">
-              <ArrowUpRight className="w-5 h-5" />
+              <ArrowDownRight className="w-5 h-5" />
             </div>
           </div>
           <div>
@@ -72,7 +72,7 @@ const AdminDashboard = () => {
           <div className="flex justify-between items-start mb-4">
             <h3 className="text-slate-500 font-medium">Total Pengeluaran Global</h3>
             <div className="w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center text-rose-600">
-              <ArrowDownRight className="w-5 h-5" />
+              <ArrowUpRight className="w-5 h-5" />
             </div>
           </div>
           <div>
