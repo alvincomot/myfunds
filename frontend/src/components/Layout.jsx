@@ -49,10 +49,10 @@ const Layout = ({ setAuth }) => {
       {/* Mobile Top Header */}
       <div className="md:hidden fixed top-0 left-0 right-0 h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 z-40">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-sm text-white font-bold text-lg">
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-slate-50 to-slate-200 flex items-center justify-center shadow-sm border border-slate-200 text-slate-700 font-bold text-lg">
             M
           </div>
-          <span className="font-bold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
+          <span className="font-bold text-lg tracking-tight text-slate-800">
             MyFunds
           </span>
         </div>
@@ -76,10 +76,10 @@ const Layout = ({ setAuth }) => {
       <aside className={`fixed md:static inset-y-0 left-0 z-50 w-64 bg-white border-r border-slate-200 flex flex-col shadow-xl md:shadow-sm transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
         <div className="p-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-200 text-white font-bold text-xl">
+            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-slate-50 to-slate-200 flex items-center justify-center shadow-sm border border-slate-200 text-slate-700 font-bold text-xl">
               M
             </div>
-            <span className="font-bold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
+            <span className="font-bold text-xl tracking-tight text-slate-800">
               MyFunds
             </span>
           </div>
