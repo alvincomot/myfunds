@@ -4,7 +4,7 @@ import { ArrowUpRight, ArrowDownRight, Wallet, Activity, CreditCard } from 'luci
 
 const StatCard = ({ title, amount, icon: Icon, type }) => {
   return (
-    <div className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 group">
+    <div className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
       <div className="flex justify-between items-start">
         <div>
           <p className="text-sm font-medium text-slate-500 mb-1">{title}</p>
@@ -16,7 +16,7 @@ const StatCard = ({ title, amount, icon: Icon, type }) => {
           type === 'income' ? 'bg-emerald-50 text-emerald-600' :
           type === 'expense' ? 'bg-rose-50 text-rose-600' :
           'bg-indigo-50 text-indigo-600'
-        } group-hover:scale-110 transition-transform duration-300`}>
+        }`}>
           <Icon className="w-6 h-6" />
         </div>
       </div>
@@ -54,7 +54,7 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out">
+    <div className="space-y-8">
       
       {/* Overview Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -89,12 +89,12 @@ const Dashboard = () => {
               <Activity className="w-5 h-5 text-indigo-500" />
               Transaksi Terakhir
             </h3>
-            <button className="text-sm font-medium text-indigo-600 hover:text-indigo-700">Lihat Semua</button>
+            <button className="text-sm font-medium text-slate-800 hover:text-slate-600">Lihat Semua</button>
           </div>
           
-          <div className="space-y-4">
+          <div className="space-y-4 devide-y divide-slate-200 dark:divide-neutral-200">
             {data?.recentTransactions?.slice(0, 5).map((trx) => (
-              <div key={trx.id} className="flex items-center justify-between p-4 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
+              <div key={trx.id} className="flex items-center justify-between p-4 transition-colors border-b dark:border-neutral-200 ">
                 <div className="flex items-center gap-4">
                   <div className={`p-3 rounded-full ${
                     trx.type === 'income' ? 'bg-emerald-100 text-emerald-600' : 'bg-rose-100 text-rose-600'
@@ -121,7 +121,7 @@ const Dashboard = () => {
         {/* Expense by Category (Mockup representation) */}
         <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
           <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2 mb-6">
-            <CreditCard className="w-5 h-5 text-indigo-500" />
+            <CreditCard className="w-5 h-5 text-slate-800" />
             Pengeluaran per Kategori
           </h3>
           <div className="space-y-5">
@@ -133,7 +133,7 @@ const Dashboard = () => {
                 </div>
                 <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
                   <div 
-                    className="bg-indigo-500 h-2 rounded-full" 
+                    className="bg-blue-500 h-2 rounded-full" 
                     style={{ width: `${Math.min((item.total / data.monthlyExpense) * 100, 100)}%` }}
                   ></div>
                 </div>

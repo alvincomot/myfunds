@@ -59,7 +59,7 @@ const Categories = () => {
         </div>
         <button 
           onClick={() => setShowModal(true)}
-          className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl font-medium transition-all duration-200 shadow-sm shadow-indigo-200"
+          className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-5 py-2.5 rounded-xl font-medium transition-all duration-200 shadow-sm shadow-indigo-200"
         >
           <Plus className="w-5 h-5" />
           Kategori Baru
@@ -152,7 +152,7 @@ const Categories = () => {
 
               <div className="pt-2 flex gap-3">
                 <button type="button" onClick={() => setShowModal(false)} className="flex-1 px-4 py-2.5 text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-xl font-medium transition-colors">Batal</button>
-                <button type="submit" className="flex-1 px-4 py-2.5 text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl font-medium transition-colors">Simpan</button>
+                <button type="submit" className="flex-1 px-4 py-2.5 text-white bg-blue-500 hover:bg-blue-600 rounded-xl font-medium transition-colors">Simpan</button>
               </div>
             </form>
           </div>

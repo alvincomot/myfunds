@@ -44,13 +44,13 @@ const Layout = ({ setAuth }) => {
   ];
 
   return (
-    <div className="flex h-screen bg-slate-50 text-slate-900 font-sans selection:bg-indigo-100 selection:text-indigo-900 overflow-hidden">
+    <div className="flex h-screen bg-slate-50 text-slate-900 font-sans overflow-hidden">
       
       {/* Mobile Top Header */}
       <div className="md:hidden fixed top-0 left-0 right-0 h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 z-40">
         <div className="flex items-center gap-2">
-          <span className="font-bold text-xl tracking-tight text-slate-800">
-            MyFunds
+          <span className="font-bold text-xl tracking-tight text-indigo-200">
+            my<span className='text-xl font-extrabold text-blue-500'>funds</span>
           </span>
         </div>
         <button 
@@ -73,9 +73,9 @@ const Layout = ({ setAuth }) => {
       <aside className={`fixed md:static inset-y-0 left-0 z-50 w-64 bg-white border-r border-slate-200 flex flex-col shadow-xl md:shadow-sm transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
         <div className="p-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="font-extrabold text-2xl tracking-tight text-slate-800">
-              MyFunds
-            </span>
+          <span className="text-3xl font-extrabold text-indigo-200">
+            my<span className='text-3xl font-extrabold text-blue-500'>funds</span>
+          </span>
           </div>
           <button 
             onClick={() => setIsSidebarOpen(false)}
@@ -96,7 +96,7 @@ const Layout = ({ setAuth }) => {
                 to={item.path}
                 className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 ${
                   isActive
-                    ? 'bg-indigo-50 text-indigo-700 font-medium shadow-sm ring-1 ring-indigo-100'
+                    ? 'bg-blue-50 text-blue-500 font-medium shadow-sm ring-1 ring-blue-100'
                     : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900'
                 }`}
               >
@@ -136,7 +136,7 @@ const Layout = ({ setAuth }) => {
 
         <div className="p-4 border-t border-slate-100 bg-white">
           <div className="px-4 py-3 mb-2 flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 font-bold flex items-center justify-center text-sm shrink-0">
+            <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-800 font-bold flex items-center justify-center text-sm shrink-0">
               {user?.name?.charAt(0) || 'U'}
             </div>
             <div className="text-sm min-w-0 flex-1">

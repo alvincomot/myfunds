@@ -82,7 +82,7 @@ const Incomes = () => {
           <>
             {/* Desktop Table View */}
             <div className="hidden md:block overflow-x-auto">
-              <table className="w-full text-left border-collapse">
+              <table className="w-full text-left border-collapse ">
                 <thead>
                   <tr className="bg-slate-50 border-b border-slate-100">
                     <th className="p-4 font-semibold text-slate-600 text-sm whitespace-nowrap">Tanggal</th>

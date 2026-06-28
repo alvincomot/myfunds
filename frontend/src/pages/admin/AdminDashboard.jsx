@@ -103,7 +103,7 @@ const AdminDashboard = () => {
                   <td className="p-4 text-sm font-medium text-slate-700">{user.name}</td>
                   <td className="p-4 text-sm text-slate-500">{user.email}</td>
                   <td className="p-4 text-sm capitalize">
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${user.role === 'admin' ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-600'}`}>
+                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${user.role === 'admin' ? 'bg-blue-100 text-blue-700' : 'bg-slate-100 text-slate-600'}`}>
                       {user.role}
                     </span>
                   </td>

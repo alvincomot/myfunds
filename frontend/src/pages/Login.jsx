@@ -29,11 +29,11 @@ const Login = ({ setAuth }) => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4 selection:bg-indigo-100 selection:text-indigo-900">
+    <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
       <div className="max-w-md w-full bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-8 border border-slate-100">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-extrabold text-slate-800 tracking-tight mb-6">
-            MyFunds
+          <h1 className="text-4xl font-extrabold text-indigo-200">
+            my<span className='text-4xl font-extrabold text-blue-500'>funds</span>
           </h1>
           <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Selamat Datang</h2>
           <p className="text-slate-500 mt-2">Masuk ke akun Anda</p>
@@ -56,7 +56,7 @@ const Login = ({ setAuth }) => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="block w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-200"
+                className="block w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200"
                 placeholder="nama@email.com"
                 required
               />
@@ -66,7 +66,7 @@ const Login = ({ setAuth }) => {
           <div>
             <div className="flex justify-between items-center mb-1.5">
               <label className="block text-sm font-medium text-slate-700">Password</label>
-              <a href="#" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">Lupa password?</a>
+              <a href="#" className="text-sm font-medium text-black hover:text-gray-700">Lupa password?</a>
             </div>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
@@ -76,7 +76,7 @@ const Login = ({ setAuth }) => {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="block w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-200"
+                className="block w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200"
                 placeholder="••••••••"
                 required
               />
@@ -86,7 +86,7 @@ const Login = ({ setAuth }) => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full flex items-center justify-center gap-2 py-3 px-4 border border-transparent rounded-xl shadow-sm text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-200"
+            className="w-full flex items-center justify-center gap-2 py-3 px-4 border border-transparent rounded-xl shadow-sm text-sm font-bold text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-200"
           >
             {loading ? 'Memproses...' : (
               <>
@@ -99,7 +99,7 @@ const Login = ({ setAuth }) => {
 
         <p className="mt-8 text-center text-sm text-slate-500">
           Belum punya akun?{' '}
-          <Link to="/register" className="font-semibold text-indigo-600 hover:text-indigo-500">
+          <Link to="/register" className="font-semibold text-blue-500 hover:text-blue-600">
             Daftar disini
           </Link>
         </p>
