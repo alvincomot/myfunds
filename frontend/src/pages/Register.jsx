@@ -53,10 +53,10 @@ const Register = ({ setAuth }) => {
     <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4 selection:bg-indigo-100 selection:text-indigo-900">
       <div className="max-w-md w-full bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-8 border border-slate-100">
         <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-gradient-to-br from-slate-50 to-slate-200 rounded-2xl mx-auto flex items-center justify-center shadow-sm border border-slate-200 text-slate-700 font-bold text-3xl mb-4">
-            M
-          </div>
-          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Daftar Akun</h2>
+          <h1 className="text-4xl font-extrabold text-slate-800 tracking-tight mb-6">
+            MyFunds
+          </h1>
+          <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Daftar Akun</h2>
           <p className="text-slate-500 mt-2">Mulai kelola keuangan Anda hari ini</p>
         </div>
 
