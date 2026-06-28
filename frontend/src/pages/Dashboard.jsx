@@ -68,14 +68,14 @@ const Dashboard = () => {
         <StatCard 
           title="Pemasukan Bulan Ini" 
           amount={data?.monthlyIncome || 0} 
-          icon={ArrowUpRight} 
+          icon={ArrowDownRight} 
           type="income" 
           trendValue={data?.incomePercentage || 0} 
         />
         <StatCard 
           title="Pengeluaran Bulan Ini" 
           amount={data?.monthlyExpense || 0} 
-          icon={ArrowDownRight} 
+          icon={ArrowUpRight} 
           type="expense" 
           trendValue={data?.expensePercentage || 0} 
         />
@@ -99,7 +99,7 @@ const Dashboard = () => {
                   <div className={`p-3 rounded-full ${
                     trx.type === 'income' ? 'bg-emerald-100 text-emerald-600' : 'bg-rose-100 text-rose-600'
                   }`}>
-                    {trx.type === 'income' ? <ArrowUpRight className="w-5 h-5" /> : <ArrowDownRight className="w-5 h-5" />}
+                    {trx.type === 'income' ? <ArrowDownRight className="w-5 h-5" /> : <ArrowUpRight className="w-5 h-5" />}
                   </div>
                   <div>
                     <p className="font-semibold text-slate-800">{trx.description || trx.category?.name}</p>
