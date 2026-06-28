@@ -19,7 +19,7 @@ const Login = ({ setAuth }) => {
       const response = await api.post('/login', { email, password });
       localStorage.setItem('auth_token', response.data.access_token);
       localStorage.setItem('user', JSON.stringify(response.data.user));
-      setAuth(true);
+      setAuth(true, response.data.user.role);
       navigate('/dashboard');
     } catch (err) {
       setError(err.response?.data?.message || 'Login gagal. Periksa kembali email dan password Anda.');
@@ -100,7 +100,7 @@ const Login = ({ setAuth }) => {
         <p className="mt-8 text-center text-sm text-slate-500">
           Belum punya akun?{' '}
           <Link to="/register" className="font-semibold text-indigo-600 hover:text-indigo-500">
-            Daftar Gratis
+            Daftar disini
           </Link>
         </p>
       </div>
